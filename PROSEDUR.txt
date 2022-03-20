@@ -1,0 +1,27 @@
+1. Proses dataset
+1.1. Baca file CSV
+1.2. Ubah string ke float (dan int untuk ID label)
+1.3. Kumpulkan semua label yang terdapat di dataset
+1.4. Cari nilai minimum dan maksimum
+1.5. Ubah rentang min-max menjadi 0.0-1.0 pada dataset
+
+2. Inisiasi neural network
+
+3. Forward propagate
+3.1. Aktivasi neuron
+     z = sum(weight_i * input_i) + bias
+3.2. Fungsi Sigmoid
+     σ(z) = 1 / (1 + e^(-z))
+
+4. Back Propagate Error
+4.1. Derivatif Fungsi Sigmoid
+     Δσ(z) = z * (1.0 - z)
+4.2. Error Back Propagation
+     error = (z - z_target) * Δσ(z)
+     error = (weight_i * error_layer_kanan) * Δσ(z)
+
+5. Latih neural network
+5.1. Update weight
+     weight = weight - learning_rate * error * input
+
+6. Tes Prediksi
